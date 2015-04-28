@@ -993,11 +993,12 @@ int SrsAvcAacCodec::avc_demux_sps_rbsp(char* rbsp, int nb_rbsp)
         if ((ret = srs_avc_nalu_read_bit(&bs, seq_scaling_matrix_present_flag)) != ERROR_SUCCESS) {
             return ret;
         }
-        if (seq_scaling_matrix_present_flag) {
-            ret = ERROR_HLS_DECODE_ERROR;
-            srs_error("sps the seq_scaling_matrix_present_flag invalid. ret=%d", ret);
-            return ret;
-        }
+
+//        if (seq_scaling_matrix_present_flag) {
+//            ret = ERROR_HLS_DECODE_ERROR;
+//            srs_error("sps the seq_scaling_matrix_present_flag invalid. ret=%d", ret);
+//            return ret;
+//        }
     }
     
     int32_t log2_max_frame_num_minus4 = -1;
